@@ -7,6 +7,7 @@ interface EmailArgType {
 }
 
 export async function sendEmail({ to, html, subject }: EmailArgType) {
+    // setup a transporter
     let transporter = nodemailer.createTransport({
         host: "smtp.ethereal.email",
         port: 587,
