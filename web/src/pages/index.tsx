@@ -14,7 +14,7 @@ export default function Home() {
             <br />
             <a
                 href="/signup"
-                className="text-green-main menlo hover:underline font-medium"
+                className="text-green-main font-medium menlo hover:underline"
             >
                 signup
             </a>
