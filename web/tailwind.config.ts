@@ -11,6 +11,8 @@ export default {
         extend: {
             colors: {
                 "green-main": "#05AF3E",
+                "primary-color": "#05AF3E",
+                "rich-black": "#011627",
                 background: "hsl(var(--background))",
                 foreground: "hsl(var(--foreground))",
                 card: {

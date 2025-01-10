@@ -8,6 +8,12 @@
     --foreground: #171717;
 }
 
+@font-face {
+    font-family: "Futura Condensed Extra Bold";
+    font-weight: normal;
+    src: url("/fonts/futura-condensed-extra-bold.otf");
+}
+
 body {
     color: var(--foreground);
     background: var(--background);
@@ -15,6 +21,10 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, San Francisco, "Inter",
         Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial,
         sans-serif;
+}
+
+.futura {
+    font-family: "Futura Condensed Extra Bold";
 }
 
 @layer base {
