@@ -30,7 +30,10 @@ const Signup: React.FC<SignupProps> = ({}) => {
             <div className="h-screen">
                 <div className="px-6 py-5 z-10">
                     <Link href="/">
-                        <Logo className="text-green-main h-10 w-auto" />
+                        <Logo
+                            className="text-green-main h-10 w-auto"
+                            monogram
+                        />
                     </Link>
                 </div>
                 <div
@@ -83,6 +86,7 @@ const Signup: React.FC<SignupProps> = ({}) => {
                                     name="username"
                                     placeholder="ob1kenobi"
                                     label="Username"
+                                    autoCorrect="off"
                                     fullWidth
                                 />
                                 <InputField

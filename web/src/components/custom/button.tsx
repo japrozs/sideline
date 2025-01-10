@@ -53,12 +53,12 @@ export const Button: React.FC<ButtonProps> = ({
                     : "bg-white border-gray-300 hover:bg-gray-50"
             } focus:ring-2 ${
                 disabled && "opacity-40 disabled"
-            } focus:ring-border-blue-100 transition-all text-sm py-1.5 w-full rounded-lg border  ${className}`}
+            } focus:ring-border-blue-100 transition-all text-[0.84rem] py-1.5 w-full rounded-lg border  ${className}`}
             {...props}
         >
             {loading ? (
                 <>
-                    <Spinner className="w-6 h-6 text-gray-200 fill-navy" />
+                    <Spinner className="w-5 h-5 text-transparent  fill-white" />
                 </>
             ) : (
                 <>

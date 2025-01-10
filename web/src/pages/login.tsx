@@ -30,7 +30,10 @@ const Login: React.FC<LoginProps> = ({}) => {
             <div className="h-screen">
                 <div className="px-6 pt-5 z-10">
                     <Link href="/">
-                        <Logo className="text-green-main h-10 w-auto" />
+                        <Logo
+                            className="text-green-main h-10 w-auto"
+                            monogram
+                        />
                     </Link>
                 </div>
                 <div

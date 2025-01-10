@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateRegister = void 0;
 const validateRegister = (options) => {
     const emailRegexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    const usernameRegExp = new RegExp(/^[a-zA-Z0-9_\.]+$/);
     if (options.name.length <= 2) {
         return [
             {
@@ -19,11 +20,11 @@ const validateRegister = (options) => {
             },
         ];
     }
-    if (!/^[a-zA-Z0-9_]+$/.test(options.username)) {
+    if (!usernameRegExp.test(options.username)) {
         return [
             {
                 field: "username",
-                message: "Username can only contain letters, numbers, and underscores",
+                message: "Username can only contain letters, numbers, periods, and underscores",
             },
         ];
     }
@@ -55,7 +56,7 @@ const validateRegister = (options) => {
         return [
             {
                 field: "password",
-                message: "Length must be greater than 6",
+                message: "Must be longer than 6 characters",
             },
         ];
     }

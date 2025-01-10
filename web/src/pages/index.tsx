@@ -1,10 +1,9 @@
-import { Logo } from "@/components/custom/logo";
-import React from "react";
+import { Navbar } from "@/components/custom/navbar";
 
 export default function Home() {
     return (
-        <div className="p-2">
-            <Logo className="text-green-main h-10 w-auto mb-1.5" />
+        <div>
+            <Navbar />
             <a
                 href="/login"
                 className="text-green-main font-medium menlo hover:underline"
@@ -18,6 +17,7 @@ export default function Home() {
             >
                 signup
             </a>
+            <p className="futura text-green-500 text-3xl">DASHBOARD</p>
         </div>
     );
 }
