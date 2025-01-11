@@ -53,7 +53,7 @@ const Login: React.FC<LoginProps> = ({}) => {
                         account
                     </p>
                     <Formik
-                        initialValues={{ email: "", password: "" }}
+                        initialValues={{ usernameOrEmail: "", password: "" }}
                         onSubmit={async (values, { setErrors }) => {
                             const response = await loginMut({
                                 variables: values,
@@ -77,9 +77,9 @@ const Login: React.FC<LoginProps> = ({}) => {
                         {({ isSubmitting }) => (
                             <Form className="w-full">
                                 <InputField
-                                    name="email"
+                                    name="usernameOrEmail"
                                     placeholder="saban@sec.net"
-                                    label="Email"
+                                    label="Email or username"
                                     fullWidth
                                 />
                                 <InputField

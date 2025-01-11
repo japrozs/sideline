@@ -203,20 +203,21 @@ export class UserResolver {
 
     @Mutation(() => UserResponse)
     async login(
-        @Arg("email") email: string,
+        @Arg("usernameOrEmail") usernameOrEmail: string,
         @Arg("password") password: string,
         @Ctx() { req }: Context
     ): Promise<UserResponse> {
-        const user = await User.findOne({
-            where: { email },
-            relations: [],
-        });
+        const user = await User.findOne(
+            usernameOrEmail.includes("@")
+                ? { where: { email: usernameOrEmail } }
+                : { where: { username: usernameOrEmail } }
+        );
         if (!user) {
             return {
                 errors: [
                     {
-                        field: "email",
-                        message: "No account with that email exists",
+                        field: "usernameOrEmail",
+                        message: "Could not find your account",
                     },
                 ],
             };

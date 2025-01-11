@@ -2,13 +2,20 @@ import React from "react";
 import { Logo } from "./logo";
 import { Button } from "./button";
 
-interface NavbarProps {}
+interface NavbarProps {
+    monogram?: boolean;
+}
 
-export const Navbar: React.FC<NavbarProps> = ({}) => {
+export const Navbar: React.FC<NavbarProps> = ({ monogram }) => {
     return (
         <div className="px-4">
             <div className="flex items-center py-2 max-w-[76rem] mx-auto border-b border-gray-100">
-                <Logo className="text-green-main h-8 my-0.5 w-auto" />
+                <a href="/">
+                    <Logo
+                        className="text-green-main h-8 my-0.5 w-auto"
+                        monogram={monogram}
+                    />
+                </a>
                 <div className="flex items-center gap-x-3 ml-auto mr-0">
                     <div className="w-20">
                         <a href="/login">

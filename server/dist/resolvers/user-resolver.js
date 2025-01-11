@@ -169,17 +169,16 @@ let UserResolver = class UserResolver {
         });
         return { user: us };
     }
-    async login(email, password, { req }) {
-        const user = await user_1.User.findOne({
-            where: { email },
-            relations: [],
-        });
+    async login(usernameOrEmail, password, { req }) {
+        const user = await user_1.User.findOne(usernameOrEmail.includes("@")
+            ? { where: { email: usernameOrEmail } }
+            : { where: { username: usernameOrEmail } });
         if (!user) {
             return {
                 errors: [
                     {
-                        field: "email",
-                        message: "No account with that email exists",
+                        field: "usernameOrEmail",
+                        message: "Could not find your account",
                     },
                 ],
             };
@@ -246,7 +245,7 @@ __decorate([
 ], UserResolver.prototype, "register", null);
 __decorate([
     (0, type_graphql_1.Mutation)(() => UserResponse),
-    __param(0, (0, type_graphql_1.Arg)("email")),
+    __param(0, (0, type_graphql_1.Arg)("usernameOrEmail")),
     __param(1, (0, type_graphql_1.Arg)("password")),
     __param(2, (0, type_graphql_1.Ctx)()),
     __metadata("design:type", Function),

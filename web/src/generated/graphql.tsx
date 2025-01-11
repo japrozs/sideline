@@ -45,8 +45,8 @@ export type MutationForgotPasswordArgs = {
 
 
 export type MutationLoginArgs = {
-  email: Scalars['String']['input'];
   password: Scalars['String']['input'];
+  usernameOrEmail: Scalars['String']['input'];
 };
 
 
@@ -92,7 +92,7 @@ export type RegularUserResponseFragment = { __typename?: 'UserResponse', errors?
 export type RegularUserFragment = { __typename: 'User', id: number, name: string, username: string, email: string, bio: string, avatar: string, bg: string, createdAt: string, updatedAt: string };
 
 export type LoginMutationVariables = Exact<{
-  email: Scalars['String']['input'];
+  usernameOrEmail: Scalars['String']['input'];
   password: Scalars['String']['input'];
 }>;
 
@@ -143,8 +143,8 @@ export const RegularUserResponseFragmentDoc = gql`
     ${RegularErrorFragmentDoc}
 ${RegularUserFragmentDoc}`;
 export const LoginDocument = gql`
-    mutation Login($email: String!, $password: String!) {
-  login(email: $email, password: $password) {
+    mutation Login($usernameOrEmail: String!, $password: String!) {
+  login(usernameOrEmail: $usernameOrEmail, password: $password) {
     ...RegularUserResponse
   }
 }
@@ -164,7 +164,7 @@ export type LoginMutationFn = Apollo.MutationFunction<LoginMutation, LoginMutati
  * @example
  * const [loginMutation, { data, loading, error }] = useLoginMutation({
  *   variables: {
- *      email: // value for 'email'
+ *      usernameOrEmail: // value for 'usernameOrEmail'
  *      password: // value for 'password'
  *   },
  * });
