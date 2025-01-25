@@ -79,11 +79,12 @@ export const Button: React.FC<ButtonProps> = ({
                                                           ? iconMargin
                                                           : "2"
                                                   }`
-                                                : `mr-${
-                                                      iconMargin
-                                                          ? iconMargin
-                                                          : "1"
-                                                  }`
+                                                : `mr-2`
+                                            // : `mr-${
+                                            //       iconMargin
+                                            //           ? iconMargin
+                                            //           : "1"
+                                            //   }`
                                         }`
                                     } text-lg`}
                                 />

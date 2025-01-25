@@ -23,14 +23,14 @@ const AppIndex: React.FC<AppIndexProps> = ({}) => {
                                 YOUR ARTICLES
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div className="transition duration-75 ease-linear h-44 flex items-center justify-center rounded-sm cursor-pointer hover:bg-white text-gray-500 hover:text-green-main hover:border-green-main bg-gray-50 border border-gray-300">
+                                <div className="transition duration-75 ease-linear h-44 flex items-center justify-center rounded-lg cursor-pointer hover:bg-white text-gray-500 hover:text-green-main hover:border-green-main bg-gray-50 border border-gray-300">
                                     <BiPlus className="text-5xl" />
                                 </div>
                             </div>
                         </div>
 
                         <div className="hidden lg:block w-2/6 pl-5 border-l border-gray-200">
-                            <div className="mt-7 flex items-start gap-x-2.5">
+                            <div className="flex items-start gap-x-2.5">
                                 <IoPerson className="mt-[0.16rem] text-gray-400 w-5 h-auto" />
                                 <div className="flex-grow">
                                     <p className="font-medium text-smol flex items-center mb-1">

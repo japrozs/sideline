@@ -67,6 +67,21 @@ const main = async () => {
         app,
         cors: false,
     });
+    app.get("/is-auth", async (req, res) => {
+        const uid = req.session.userId;
+        if (!uid) {
+            return res.status(200).json({
+                authenticated: false,
+            });
+        }
+        const user = await user_1.User.findOne(uid);
+        if (!user) {
+            return res.status(200).json({
+                authenticated: false,
+            });
+        }
+        return res.status(200).json({ authenticated: true });
+    });
     app.listen(parseInt(process.env.PORT), () => {
         console.log(`🚀 Server started on localhost:${process.env.PORT}`);
     });
