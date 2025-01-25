@@ -2,10 +2,20 @@ import React from "react";
 import { Logo } from "./logo";
 import { Button } from "./button";
 import { useMeQuery } from "@/generated/graphql";
-import { TbPencil } from "react-icons/tb";
+import { TbArticle, TbPencil, TbSettings } from "react-icons/tb";
 import { LuBell } from "react-icons/lu";
-import { BiBell } from "react-icons/bi";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { BiBell, BiStats } from "react-icons/bi";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { IoExitOutline, IoPersonOutline, IoStatsChart } from "react-icons/io5";
+import { FiBookmark } from "react-icons/fi";
+import { IoMdExit } from "react-icons/io";
 
 interface NavbarProps {
     monogram?: boolean;
@@ -46,6 +56,54 @@ export const Navbar: React.FC<NavbarProps> = ({ monogram }) => {
                                 />
                             </a>
                         </div>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger className="focus:ring-0 focus:outline-none">
+                                <img
+                                    src="https://i.redd.it/80hxyr8x3h6z.jpg"
+                                    className="w-7 h-7 rounded-full"
+                                />
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent className="mt-1 mx-1 w-48">
+                                <a href="/app">
+                                    <DropdownMenuItem className="font-medium text-gray-800 hover:text-black text-sm cursor-pointer">
+                                        <IoPersonOutline className="text-gray-400 mr-1.5" />
+                                        Profile
+                                    </DropdownMenuItem>
+                                </a>
+                                <a href="/app">
+                                    <DropdownMenuItem className="font-medium text-gray-800 hover:text-black text-sm cursor-pointer">
+                                        <TbArticle className="text-gray-400 mr-1.5" />
+                                        Articles
+                                    </DropdownMenuItem>
+                                </a>
+                                <a href="/app">
+                                    <DropdownMenuItem className="font-medium text-gray-800 hover:text-black text-sm cursor-pointer">
+                                        <FiBookmark className="text-gray-400 mr-1.5" />
+                                        Library
+                                    </DropdownMenuItem>
+                                </a>
+                                <a href="/app">
+                                    <DropdownMenuItem className="font-medium text-gray-800 hover:text-black text-sm cursor-pointer">
+                                        <BiStats className="text-gray-400 mr-1.5" />
+                                        Stats
+                                    </DropdownMenuItem>
+                                </a>
+                                <DropdownMenuSeparator />
+                                <a href="/app">
+                                    <DropdownMenuItem className="font-medium text-gray-800 hover:text-black text-sm cursor-pointer">
+                                        <TbSettings className="text-gray-400 mr-1.5" />
+                                        Settings
+                                    </DropdownMenuItem>
+                                </a>
+                                <DropdownMenuSeparator />
+                                <a href="/app">
+                                    <DropdownMenuItem className="font-medium text-red-400 focus:text-red-500 focus:bg-red-50 text-sm cursor-pointer">
+                                        <IoMdExit className="text-red-400 mr-1.5" />
+                                        Sign out
+                                    </DropdownMenuItem>
+                                </a>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </div>
                 ) : (
                     <div className="flex items-center gap-x-3 ml-auto mr-0">
