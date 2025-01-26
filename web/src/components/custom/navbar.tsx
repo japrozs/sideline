@@ -14,7 +14,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { IoExitOutline, IoPersonOutline, IoStatsChart } from "react-icons/io5";
-import { FiBookmark } from "react-icons/fi";
+import { FiBookmark, FiHome } from "react-icons/fi";
 import { IoMdExit } from "react-icons/io";
 
 interface NavbarProps {
@@ -64,6 +64,12 @@ export const Navbar: React.FC<NavbarProps> = ({ monogram }) => {
                                 />
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="mt-1 mx-1 w-48">
+                                {/* <a href="/">
+                                    <DropdownMenuItem className="font-medium text-gray-800 hover:text-black text-sm cursor-pointer">
+                                        <FiHome className="text-gray-400 mr-1.5" />
+                                        Home
+                                    </DropdownMenuItem>
+                                </a> */}
                                 <a href="/app">
                                     <DropdownMenuItem className="font-medium text-gray-800 hover:text-black text-sm cursor-pointer">
                                         <IoPersonOutline className="text-gray-400 mr-1.5" />

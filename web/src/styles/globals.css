@@ -97,3 +97,42 @@ body {
 .menlo {
     font-family: "Menlo", monospace;
 }
+
+.bn-container[data-editor][data-color-scheme] {
+    --bn-colors-editor-text: #000;
+}
+
+.bn-block-content .bn-inline-content::before {
+    font-family: -apple-system, BlinkMacSystemFont, San Francisco, "Inter",
+        Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial,
+        sans-serif;
+    font-style: normal !important;
+}
+.bn-block-content[data-is-empty-and-focused]:not(data-content-type="heading")
+    .bn-inline-content:has(> .ProseMirror-trailingBreak:only-child)::before {
+    font-weight: 500;
+}
+
+.bn-block-content[data-content-type="paragraph"] {
+    font-weight: 500;
+}
+.bn-block-content[data-content-type="table"] {
+    font-weight: 500;
+}
+
+.bn-block-content[data-content-type="heading"] {
+    line-height: 115%;
+}
+
+.bn-inline-content a {
+    color: #147efb;
+}
+
+.bn-inline-content a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+code.bn-inline-content {
+    font-family: "Menlo";
+}
